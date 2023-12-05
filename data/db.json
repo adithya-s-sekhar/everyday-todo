@@ -1,0 +1,22 @@
+{
+    "tasks":[
+        {
+            "title": "Task 1",
+            "body": "Task 1 details",
+            "status": 1,
+            "id": 1
+        },
+        {
+            "title": "Task 2",
+            "body": "Task 2 details",
+            "status": 0,
+            "id": 2
+        },
+        {
+            "title": "Task 3",
+            "body": "Task 3 details",
+            "status": 2,
+            "id": 3
+        }
+    ]
+}
