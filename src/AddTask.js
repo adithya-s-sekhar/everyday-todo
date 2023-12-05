@@ -6,10 +6,13 @@ const AddTask = () => {
                 <label>Title: </label>
                 <input 
                 type="text" 
+                placeholder="Task title here"
                 required />
                 <label>Details: </label>
                 <textarea 
-                required />
+                placeholder="Task details here"
+                required 
+                no/>
                 <button>
                     Save
                 </button>
