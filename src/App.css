@@ -4,6 +4,10 @@
   font-family: Quicksand, sans-serif;
 }
 
+body{
+  color: #333;
+}
+
 a{
   text-decoration: none;
 }
@@ -42,21 +46,21 @@ a{
   font-size: 16px;
 }
 
-.add-button{
+.add-button,.task-input button{
   background-color: #e8d610;
   color: #303030;
   border: 2px solid #333;
   box-shadow: 0px 10px 10px 0px #333;
 }
 
-.add-button:active{
+.add-button:active,.task-input button:active{
   background-color: #f5e211;
   box-shadow: 0px 5px 20px 0px #333;
   transition: all 10ms ease;
 }
 
 .task-list a{
-  color: #000;
+  color: #333;
 }
 
 .task-item,.task-details{
@@ -125,56 +129,41 @@ a{
 }
 
 .add-task{
-  max-width: 500px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
   text-align: center;
 }
 
-.add-task label{
-  text-align: left;
-  display: block;
+.add-task h1{
+  text-align: center;
 }
 
-.add-task input, .add-task textarea{
-  width: 100%;
-  display: block;
-  padding: 5px;
-  margin-bottom: 20px;
-  border: 1px solid #333;
+.task-input{
+  border: 1px solid #ccc;
   border-radius: 5px;
+  width: 500px;
+  padding: 10px 40px;
 }
 
-.add-task input{
-  font-weight: bold;
-  height: 32px;
-  font-size: 22px;
+.task-input input, .add-task textarea{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 18px;
+  padding: 5px;
 }
 
 .add-task textarea{
-  font-size: 18px;
-  height: 400px;
+  height: 300px;
   resize: none;
 }
 
-.add-task input:focus, .add-task textarea:focus{
-  border: 2px solid #333;
-  transition: all 10ms ease;
-}
-
-.add-task button{
-  font-size: 18px;
-  font-weight: bold;
+.task-input button{
   padding: 10px 15px;
-  cursor: pointer;
-  background-color: #e8d610;
-  color: #303030;
-  border: 2px solid #333;
+  font-size: 18px;
+  margin-bottom: 30px;
   border-radius: 5px;
-  box-shadow: 0px 10px 10px 0px #333;
-}
-
-.add-task button:active{
-  background-color: #f5e211;
-  box-shadow: 0px 5px 20px 0px #333;
-  transition: all 10ms ease;
 }
