@@ -44,7 +44,7 @@ const AddTask = () => {
                     value={details}
                     onChange={(e) => setDetails(e.target.value)}/>
                     {!isPending && <button>Save</button>}
-                    {isPending && <button disabled>Saving</button>}
+                    {isPending && <button disabled>Saving..</button>}
                 </form>
             </div>
         </div>
