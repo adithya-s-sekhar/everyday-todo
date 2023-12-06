@@ -1,9 +1,17 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const TaskDetails = () => {
     const { id } = useParams();
-    const { data: task, dbLoaded, error } = useFetch("http://localhost:8000/tasks/"+id)
+    const { data: task, dbLoaded, error } = useFetch("http://localhost:8000/tasks/"+id);
+    const navigate = useNavigate();
+    const deleteTask = () => {
+        fetch('http://localhost:8000/tasks/'+task.id,{
+            method: 'DELETE'
+        }).then(
+            navigate("/")
+        )
+    }
 
     return(
         <div>
@@ -22,7 +30,7 @@ const TaskDetails = () => {
                             {(task.status === 0 || task.status === 2) && <button className="task-button-done">Mark as Done</button>}
                             {(task.status === 1) && <button className="task-button-not-done">Mark as not done</button>}
                             {(task.status === 0) && <button className="task-button-wont-do">Won't Do</button>}
-                            {(task.status === 1 || task.status === 2) && <button className="task-button-delete">Delete</button>}
+                            {(task.status === 1 || task.status === 2) && <button className="task-button-delete" onClick={deleteTask}>Delete</button>}
                     </div>
                 </div>
             }
