@@ -153,21 +153,6 @@ a{
   margin-top: 10px;
 }
 
-/* 
-.task-details{
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  border: 1px solid #ccc;
-  padding: 10px 15px;
-  margin-top: 20px;
-}
-
-.task-details-details{
-  border: 1px solid #ccc;
-  padding: 5px 15px;
-} */
-
 .task-buttons button{
   border: 2px solid #333;
   border-radius: 5px;
@@ -227,7 +212,7 @@ a{
   text-align: center;
 }
 
-.add-task h1{
+.task-input h1{
   text-align: center;
 }
 
@@ -235,14 +220,14 @@ a{
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 500px;
-  padding: 10px 40px;
+  padding: 30px 40px;
 }
 
-.task-input input, .add-task textarea{
+.task-input input, .task-input textarea{
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
-  margin-bottom: 30px;
+  margin-top: 20px;
   font-size: 18px;
   padding: 5px;
 }
@@ -255,7 +240,7 @@ a{
 .task-input button{
   padding: 10px 15px;
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-top: 20px;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
