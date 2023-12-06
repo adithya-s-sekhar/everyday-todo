@@ -136,9 +136,17 @@ a{
   color: #fff;
 }
 
+.task-button-done:active{
+  background-color: #3bc309;
+}
+
 .task-button-not-done{
   background-color: #e8d610;
   color: #303030;
+}
+
+.task-button-not-done:active{
+  background-color: #f5e211;
 }
 
 .task-button-wont-do{
@@ -146,9 +154,17 @@ a{
   color: #fff;
 }
 
+.task-button-wont-do:active{
+  background-color: #b300b3;
+}
+
 .task-button-delete{
   background-color: #CF0000;
   color: #fff;
+}
+
+.task-button-delete:active{
+  background-color: #ff0000;
 }
 
 .add-task{
