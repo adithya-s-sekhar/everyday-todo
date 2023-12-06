@@ -11,7 +11,7 @@ const Home = () => {
     };
 
     return(
-        <div className="Home">
+        <div className="home">
             <h1>Tasks</h1>
             {!dbLoaded && <div>Loading..</div>}
             {error && <div>Error: {error}</div>}

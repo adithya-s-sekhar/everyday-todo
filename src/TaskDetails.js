@@ -55,23 +55,30 @@ const TaskDetails = () => {
 
     return(
         <div>
-            <h1>Details</h1>
             {!dbLoaded && <div>Loading..</div>}
             {error && <div>Error: {error}</div>}
             {
                 task &&
-                <div className={`task-details task`+task.status}>
-                    <h2>{task.title}</h2>
-                    {(task.status == 0) && <p className="status-text st-not-done">Status: Not done</p>}
-                    {(task.status == 1) && <p className="status-text st-done">Status: Done</p>}
-                    {(task.status == 2) && <p className="status-text st-wont-do">Status: Won't Do</p>}
-                    <h3>Details</h3>
-                    <p>{task.details}</p>
-                    <div className="task-buttons">
-                            {(task.status === 0) && <button className="task-button-done" onClick={doneTask}>Mark as Done</button>}
-                            {(task.status === 1) && <button className="task-button-not-done" onClick={notDoneTask}>Mark as not done</button>}
-                            {(task.status === 0) && <button className="task-button-wont-do" onClick={wontDoTask}>Won't Do</button>}
-                            {(task.status === 1 || task.status === 2) && <button className="task-button-delete" onClick={deleteTask}>Delete</button>}
+                <div className="task-details">
+                    <div className="task-details-title">
+                    <h1>{task.title}</h1>
+                    </div>
+                    <div className="task-details-actions">
+                        <div className="task-details-status">
+                        {(task.status == 0) && <p className="status-text st-not-done">Status: Not done</p>}
+                        {(task.status == 1) && <p className="status-text st-done">Status: Done</p>}
+                        {(task.status == 2) && <p className="status-text st-wont-do">Status: Won't Do</p>}
+                        </div>
+                        <div className="task-buttons">
+                                {(task.status === 0) && <button className="task-button-done" onClick={doneTask}>Mark as Done</button>}
+                                {(task.status === 1) && <button className="task-button-not-done" onClick={notDoneTask}>Mark as not done</button>}
+                                {(task.status === 0) && <button className="task-button-wont-do" onClick={wontDoTask}>Won't Do</button>}
+                                {(task.status === 1 || task.status === 2) && <button className="task-button-delete" onClick={deleteTask}>Delete</button>}
+                        </div>
+                    </div>
+                    <div className="task-details-details">
+                        <h2>Details</h2>
+                        <p>{task.details}</p>
                     </div>
                 </div>
             }
