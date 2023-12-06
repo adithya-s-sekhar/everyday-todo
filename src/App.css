@@ -70,6 +70,18 @@ a{
   padding: 20px 25px;
 }
 
+.task0{
+  border: 2px solid #e8d610;
+}
+
+.task1{
+  border: 2px solid #2F9D07;
+}
+
+.task2{
+  border: 2px solid purple;
+}
+
 .status-text{
   font-size: 11px;
   font-weight: bold;

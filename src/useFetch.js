@@ -24,7 +24,7 @@ const useFetch = (url) => {
                 setDbLoaded(true);
             })
         }, 500)
-    }, [url]);
+    });
 
     return {data, dbLoaded, error}
 }
