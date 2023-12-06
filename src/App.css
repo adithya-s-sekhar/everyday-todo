@@ -59,14 +59,20 @@ a{
   transition: all 10ms ease;
 }
 
+.task-list{
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
 .task-list a{
   color: #333;
 }
 
 .task-item,.task-details{
+  width: 400px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 20px;
   padding: 20px 25px;
 }
 
@@ -103,6 +109,11 @@ a{
 .st-wont-do{
   background-color: purple;
   color: #fff;
+}
+
+.task-buttons{
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
 }
 
 .task-buttons button{

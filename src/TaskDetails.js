@@ -65,6 +65,7 @@ const TaskDetails = () => {
                     {(task.status == 0) && <p className="status-text st-not-done">Status: Not done</p>}
                     {(task.status == 1) && <p className="status-text st-done">Status: Done</p>}
                     {(task.status == 2) && <p className="status-text st-wont-do">Status: Won't Do</p>}
+                    <h3>Details</h3>
                     <p>{task.details}</p>
                     <div className="task-buttons">
                             {(task.status === 0) && <button className="task-button-done" onClick={doneTask}>Mark as Done</button>}
