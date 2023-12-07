@@ -11,12 +11,12 @@ const AddTask = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsPending(true);
-        const task = {title, details, status};
+        const task = { title, details, status };
 
         setTimeout( () => {
             fetch(process.env.REACT_APP_JSON_URL+'/tasks',{
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(task)
             })
             .then(() => {
@@ -28,23 +28,23 @@ const AddTask = () => {
     }
 
     return(
-        <div className="add-task">
-            <div className="task-input">
+        <div className = "add-task">
+            <div className = "task-input">
                 <h1>Add Task</h1>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit = { handleSubmit }>
                     <input 
-                    type="text" 
-                    placeholder="Task title here"
+                    type = "text" 
+                    placeholder = "Task title here"
                     required 
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}/>
+                    value = { title }
+                    onChange={ (e) => setTitle(e.target.value) }/>
                     <textarea 
-                    placeholder="Task details here"
+                    placeholder = "Task details here"
                     required 
-                    value={details}
-                    onChange={(e) => setDetails(e.target.value)}/>
-                    {!isPending && <button>Save</button>}
-                    {isPending && <button disabled>Saving..</button>}
+                    value = { details }
+                    onChange = { (e) => setDetails(e.target.value) }/>
+                    { !isPending && <button>Save</button> }
+                    { isPending && <button disabled>Saving..</button> }
                 </form>
             </div>
         </div>
