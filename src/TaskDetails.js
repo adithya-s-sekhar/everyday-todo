@@ -3,16 +3,16 @@ import useFetch from "./useFetch";
 
 const TaskDetails = () => {
     const { id } = useParams();
-    const { data: task, dbLoaded, error } = useFetch("http://localhost:8000/tasks/"+id);
+    const { data: task, dbLoaded, error } = useFetch(process.env.REACT_APP_JSON_URL+'/tasks/'+id);
     const navigate = useNavigate();
 
     const doneTask = () => {
         const newTask = {...task, status:1};
         console.log(newTask);
-        fetch('http://localhost:8000/tasks/'+task.id,{
+        fetch(process.env.REACT_APP_JSON_URL+'/tasks/'+task.id,{
             method: 'DELETE'
         }).then(() => {
-            fetch('http://localhost:8000/tasks',{
+            fetch(process.env.REACT_APP_JSON_URL+'/tasks',{
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify(newTask)
@@ -22,10 +22,10 @@ const TaskDetails = () => {
     const notDoneTask = () => {
         const newTask = {...task, status:0};
         console.log(newTask);
-        fetch('http://localhost:8000/tasks/'+task.id,{
+        fetch(process.env.REACT_APP_JSON_URL+'/tasks/'+task.id,{
             method: 'DELETE'
         }).then(() => {
-            fetch('http://localhost:8000/tasks',{
+            fetch(process.env.REACT_APP_JSON_URL+'/tasks',{
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify(newTask)
@@ -35,10 +35,10 @@ const TaskDetails = () => {
     const wontDoTask = () => {
         const newTask = {...task, status:2};
         console.log(newTask);
-        fetch('http://localhost:8000/tasks/'+task.id,{
+        fetch(process.env.REACT_APP_JSON_URL+'/tasks/'+task.id,{
             method: 'DELETE'
         }).then(() => {
-            fetch('http://localhost:8000/tasks',{
+            fetch(process.env.REACT_APP_JSON_URL+'/tasks',{
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify(newTask)
@@ -46,7 +46,7 @@ const TaskDetails = () => {
         })
     }
     const deleteTask = () => {
-        fetch('http://localhost:8000/tasks/'+task.id,{
+        fetch(process.env.REACT_APP_JSON_URL+'/tasks/'+task.id,{
             method: 'DELETE'
         }).then(() => {
             navigate('/');

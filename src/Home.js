@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 
 const Home = () => {
 
-    const {data: tasks, dbLoaded, error} = useFetch("http://localhost:8000/tasks");
+    const {data: tasks, dbLoaded, error} = useFetch(process.env.REACT_APP_JSON_URL+'/tasks');
 
     //todo
     const handleTaskStatus = (id) => {

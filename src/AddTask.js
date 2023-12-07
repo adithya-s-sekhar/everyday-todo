@@ -14,7 +14,7 @@ const AddTask = () => {
         const task = {title, details, status};
 
         setTimeout( () => {
-            fetch('http://localhost:8000/tasks',{
+            fetch(process.env.REACT_APP_JSON_URL+'/tasks',{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(task)
