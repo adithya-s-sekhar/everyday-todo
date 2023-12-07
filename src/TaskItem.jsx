@@ -12,8 +12,8 @@ const TaskItem = (props) => {
                                 <h2>{ task.title }</h2>
                             </div>
                             <div className = "task-item-status">
-                                { !task.completed && <p className = "status-text st-not-done">Status: Not done</p> }
-                                { task.completed && <p className = "status-text st-done">Status: Done</p> }
+                                { !task.completed && <div className="status-icon st-not-done"></div> }
+                                { task.completed && <div className="status-icon st-done"></div> }
                             </div>
                             <div className = "task-item-details">
                                 <h3>Details</h3>

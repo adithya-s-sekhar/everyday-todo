@@ -41,33 +41,24 @@ const TaskDetails = () => {
     }
 
     return(
-        <div>
+        <div className="task-details">
+            <button className="back" onClick={() => navigate('/')}>&#128281;</button>
             { !dbLoaded && <div>Loading..</div> }
             { error && <div>Error: { error }</div> }
-            { task &&
-                <div className = "task-details">
-                    <div className = "task-details-title">
-                        <div className="task-details-title-text">
-                            <h1>{ task.title }</h1>
-                        </div>
-                        <div className="task-details-title-status">
-                            { !task.completed && <p className = "status-text st-not-done">Status: Not done</p> }
-                            { task.completed && <p className = "status-text st-done">Status: Done</p> }
-                        </div>
-                    </div>
-                    <div className = "task-details-actions">
-                        <div className = "task-buttons">
-                            { !task.completed && <button className = "task-button-done" onClick = { doneTask }>Mark as Done</button> }
-                            { task.completed && <button className = "task-button-not-done" onClick = { notDoneTask }>Mark as not done</button> }
+            { task && <div className="task-details-header">
+                    <h1>{task.title}</h1> 
+                    {task.completed && <p className="status-text st-done">Completed</p>}
+                    {!task.completed && <p className="status-text st-not-done">Not completed</p>}
+            </div> }
+            { task && <div className="task-details-body">
+                    <h2>Details</h2>
+                    <p>{task.details}</p>
+            </div> }
+            { task && <div className = "task-buttons">
+                            { !task.completed && <button className = "task-button-done" onClick = { doneTask }>Mark as done</button> }
+                            { task.completed && <button className = "task-button-not-done" onClick = { notDoneTask }>Reset task</button> }
                             <button className = "task-button-delete" onClick = { deleteTask }>Delete</button>
-                        </div>
-                    </div>
-                    <div className="task-details-details">
-                        <h2>Details</h2>
-                        <p>{ task.details }</p>
-                    </div>
-                </div>
-            }
+            </div>}
         </div>
     );
 }

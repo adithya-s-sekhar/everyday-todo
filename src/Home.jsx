@@ -9,7 +9,7 @@ const Home = () => {
             <h1>Tasks</h1>
             { !dbLoaded && <div>Loading..</div> }
             { error && <div>Error: { error }</div> }
-            { tasks && <TaskList tasks = { tasks } /> }
+            { tasks && <TaskList tasks = { tasks }/> }
         </div>
     );
 }

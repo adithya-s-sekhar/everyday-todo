@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import TaskItem from "./TaskItem";
 
 const TaskList = (props) => {
@@ -6,7 +5,7 @@ const TaskList = (props) => {
 
     return(
            <div className = "task-list">
-                <TaskItem tasks = { tasks } />
+                <TaskItem tasks = { tasks }/>
            </div>
     );
 }
