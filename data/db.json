@@ -3,19 +3,19 @@
     {
       "title": "Lorem Ipsum 1",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at nunc ac mauris feugiat venenatis. Sed a blandit nulla. Suspendisse consectetur mattis egestas. Cras eu semper lectus. Duis urna mauris, tincidunt imperdiet tortor eget, ultricies placerat nisl. Vivamus pretium, velit et varius aliquet, dui erat elementum arcu, a venenatis eros nunc id quam. Fusce sit amet orci sed dolor aliquam ullamcorper in sit amet turpis. Duis ultricies sed ex sed consequat. Nulla gravida congue nisi.",
-      "status": 0,
+      "completed": false,
       "id": 1
     },
     {
       "title": "Lorem Ipsum 2",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at nunc ac mauris feugiat venenatis. Sed a blandit nulla. Suspendisse consectetur mattis egestas. Cras eu semper lectus. Duis urna mauris, tincidunt imperdiet tortor eget, ultricies placerat nisl. Vivamus pretium, velit et varius aliquet, dui erat elementum arcu, a venenatis eros nunc id quam. Fusce sit amet orci sed dolor aliquam ullamcorper in sit amet turpis. Duis ultricies sed ex sed consequat. Nulla gravida congue nisi.",
-      "status": 0,
+      "completed": false,
       "id": 2
     },
     {
       "title": "Lorem Ipsum 3",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at nunc ac mauris feugiat venenatis. Sed a blandit nulla. Suspendisse consectetur mattis egestas. Cras eu semper lectus. Duis urna mauris, tincidunt imperdiet tortor eget, ultricies placerat nisl. Vivamus pretium, velit et varius aliquet, dui erat elementum arcu, a venenatis eros nunc id quam. Fusce sit amet orci sed dolor aliquam ullamcorper in sit amet turpis. Duis ultricies sed ex sed consequat. Nulla gravida congue nisi.",
-      "status": 1,
+      "completed": true,
       "id": 3
     }
   ]

@@ -5,13 +5,13 @@ const AddTask = () => {
     const [title,setTitle] = useState('');
     const [details,setDetails] = useState('');
     const [isPending,setIsPending] = useState(false);
-    const status = 0;
+    const completed = false;
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsPending(true);
-        const task = { title, details, status };
+        const task = { title, details, completed };
 
         setTimeout( () => {
             fetch(process.env.REACT_APP_JSON_URL+'/tasks',{
