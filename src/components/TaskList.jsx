@@ -12,7 +12,6 @@ const TaskList = (props) => {
         let sortedTasks = [...tasks]
         if (sortType === "sortAdded") sortedTasks.sort((a,b) => a.id - b.id);
         if (sortType === "sortCompleted") sortedTasks.sort((a,b) => a.completed - b.completed);
-        if (sortType === "sortDate") sortedTasks.sort((a,b) => a.taskDate - b.taskDate);
         setNewTasks(sortedTasks);
     },[sortType])
 
@@ -27,7 +26,6 @@ const TaskList = (props) => {
                     Sort by: <select value={sortType} onChange={handleSort}>
                     <option value="sortAdded">Added order</option>
                     <option value="sortCompleted">Completion</option>
-                    <option value="sortDate">Date</option>
                     </select>
                 </div>
                 <div className = "task-items">
