@@ -1,24 +1,24 @@
 {
   "tasks": [
     {
-      "title": "Lorem Ipsum 1",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at nunc ac mauris feugiat venenatis. Sed a blandit nulla. Suspendisse consectetur mattis egestas. Cras eu semper lectus. Duis urna mauris, tincidunt imperdiet tortor eget, ultricies placerat nisl. Vivamus pretium, velit et varius aliquet, dui erat elementum arcu, a venenatis eros nunc id quam. Fusce sit amet orci sed dolor aliquam ullamcorper in sit amet turpis. Duis ultricies sed ex sed consequat. Nulla gravida congue nisi.",
-      "taskDate": "2023-12-08",
+      "title": "Task 1",
+      "details": "Task 1 Details",
+      "taskDate": "2023-12-01",
       "completed": false,
       "id": 1
     },
     {
-      "title": "Lorem Ipsum 2",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at nunc ac mauris feugiat venenatis. Sed a blandit nulla. Suspendisse consectetur mattis egestas. Cras eu semper lectus. Duis urna mauris, tincidunt imperdiet tortor eget, ultricies placerat nisl. Vivamus pretium, velit et varius aliquet, dui erat elementum arcu, a venenatis eros nunc id quam. Fusce sit amet orci sed dolor aliquam ullamcorper in sit amet turpis. Duis ultricies sed ex sed consequat. Nulla gravida congue nisi.",
-      "taskDate": "2023-12-08",
+      "title": "Task 2",
+      "details": "Task 2 Details",
+      "taskDate": "2023-12-02",
       "completed": false,
       "id": 2
     },
     {
-      "title": "Lorem Ipsum 3",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at nunc ac mauris feugiat venenatis. Sed a blandit nulla. Suspendisse consectetur mattis egestas. Cras eu semper lectus. Duis urna mauris, tincidunt imperdiet tortor eget, ultricies placerat nisl. Vivamus pretium, velit et varius aliquet, dui erat elementum arcu, a venenatis eros nunc id quam. Fusce sit amet orci sed dolor aliquam ullamcorper in sit amet turpis. Duis ultricies sed ex sed consequat. Nulla gravida congue nisi.",
-      "taskDate": "2023-12-08",
-      "completed": true,
+      "title": "Task 3",
+      "details": "Task 3 Details",
+      "taskDate": "2023-12-03",
+      "completed": false,
       "id": 3
     }
   ]

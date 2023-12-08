@@ -11,10 +11,11 @@ const TaskDetails = (props) => {
             method: 'DELETE'
         }).then(() => {
             fetch(process.env.REACT_APP_JSON_URL,{
-                method: 'POST',
-                headers: { 'Content-Type':'application/json' },
-                body: JSON.stringify(newTask)
-            });
+            method: 'POST',
+            headers: { 'Content-Type':'application/json' },
+            body: JSON.stringify(newTask)})
+        }).then(() => {
+            navigate('/');
         })
     }
 
@@ -25,7 +26,6 @@ const TaskDetails = (props) => {
             navigate('/');
         })
     }
-
 
     return(
         <div className="task-details">
