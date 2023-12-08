@@ -4,7 +4,16 @@ import { useNavigate } from "react-router-dom";
 const AddTask = () => {
     const [title,setTitle] = useState('');
     const [details,setDetails] = useState('');
-    const [taskDate,setTaskDate] = useState(new Date);
+    const [taskDate,setTaskDate] = useState(() => {
+        const d = new Date();
+        const d_year = d.getFullYear();
+        let d_month = d.getMonth();
+        d_month = d_month + 1;
+        let d_day = d.getDate();
+        if (d_day < 10) d_day = '0'+d_day;
+        const d_full = d_year+'-'+d_month+'-'+d_day;
+        return d_full;
+    });
     const [isPending,setIsPending] = useState(false);
     const completed = false;
     const navigate = useNavigate();
