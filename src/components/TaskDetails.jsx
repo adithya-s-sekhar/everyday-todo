@@ -1,10 +1,8 @@
-import { useNavigate, useParams } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 
-const TaskDetails = () => {
-    const { id } = useParams();
-    const taskUrl = process.env.REACT_APP_JSON_URL+'/tasks/'+id;
-    const { data: task, dbLoaded, error } = useFetch(taskUrl);
+const TaskDetails = (props) => {
+    const task = props.task;
+    const taskUrl = props.taskUrl;
     const navigate = useNavigate();
 
     const changeTask = (taskStatus) => {
@@ -28,28 +26,26 @@ const TaskDetails = () => {
         })
     }
 
+
     return(
         <div className="task-details">
-            <button className="back" onClick={() => navigate('/')}>&#128281;</button>
-            { !dbLoaded && <div>Loading..</div> }
-            { error && <div>Error: { error }</div> }
-            { task && <div className="task-details-header">
-                    <h1>{task.title}</h1> 
-                    {task.taskDate && <p className="task-details-date"><b>Date</b>: {task.taskDate}</p>}
-                    {task.completed && <p className="status-text st-done">Completed</p>}
-                    {!task.completed && <p className="status-text st-not-done">Not completed</p>}
-            </div> }
-            { task && <div className="task-details-body">
-                    <h2>Details</h2>
-                    <p>{task.details}</p>
-            </div> }
-            { task && <div className = "task-buttons">
-                            { !task.completed && <button className = "task-button-done" onClick = { () => {changeTask(true)} }>Mark as done</button> }
-                            { task.completed && <button className = "task-button-not-done" onClick = { () => {changeTask(false)} }>Reset task</button> }
-                            <button className = "task-button-delete" onClick = { deleteTask }>Delete</button>
-            </div>}
+            <div className="task-details-header">
+                <h1>{task.title}</h1> 
+                <p className="task-details-date"><b>Date</b>: {task.taskDate}</p>
+                {task.completed && <p className="status-text st-done">Completed</p>}
+                {!task.completed && <p className="status-text st-not-done">Not completed</p>}
+            </div>
+            <div className="task-details-body">
+                <h2>Details</h2>
+                <p>{task.details}</p>
+            </div>
+            <div className = "task-buttons">
+                { !task.completed && <button className = "task-button-done" onClick = { () => {changeTask(true)} }>Mark as done</button> }
+                { task.completed && <button className = "task-button-not-done" onClick = { () => {changeTask(false)} }>Reset task</button> }
+                <button className = "task-button-delete" onClick = { deleteTask }>Delete</button>
+            </div>
         </div>
-    );
+    )
 }
 
-export default TaskDetails
+export default TaskDetails;
