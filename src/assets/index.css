@@ -113,6 +113,10 @@ button:active,.add-button:active{
   background-color: #fff;
 }
 
+.task-item-date{
+  margin-top: 10px;
+}
+
 .task-item-status{
   margin-top: 10px;
 }
@@ -173,6 +177,10 @@ button:active,.add-button:active{
 }
 
 .task-details-header {
+  margin-top: 15px;
+}
+
+.task-details-date{
   margin-top: 15px;
 }
 

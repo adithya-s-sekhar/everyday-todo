@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import Navbar from './Navbar';
 import Home from './Home';
 import AddTask from './AddTask';
-import TaskDetails from '../components/TaskDetails';
+import TaskDetails from './TaskDetails';
  
 function App() {
   return(

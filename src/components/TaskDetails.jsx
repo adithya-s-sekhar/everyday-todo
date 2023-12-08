@@ -34,6 +34,7 @@ const TaskDetails = () => {
             { error && <div>Error: { error }</div> }
             { task && <div className="task-details-header">
                     <h1>{task.title}</h1> 
+                    {task.taskDate && <p className="task-details-date">Date: {task.taskDate}</p>}
                     {task.completed && <p className="status-text st-done">Completed</p>}
                     {!task.completed && <p className="status-text st-not-done">Not completed</p>}
             </div> }

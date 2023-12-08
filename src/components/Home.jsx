@@ -1,4 +1,4 @@
-import TaskList from "../components/TaskList";
+import TaskList from "./TaskList";
 import useFetch from "../hooks/useFetch";
 
 const Home = () => {

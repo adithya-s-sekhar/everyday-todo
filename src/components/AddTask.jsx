@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const AddTask = () => {
     const [title,setTitle] = useState('');
     const [details,setDetails] = useState('');
+    const [taskDate,setTaskDate] = useState(new Date);
     const [isPending,setIsPending] = useState(false);
     const completed = false;
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ const AddTask = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsPending(true);
-        const task = { title, details, completed };
+        const task = { title, details, taskDate, completed };
 
         setTimeout( () => {
             fetch(process.env.REACT_APP_JSON_URL+'/tasks',{
@@ -43,6 +44,10 @@ const AddTask = () => {
                     required 
                     value = { details }
                     onChange = { (e) => setDetails(e.target.value) }/>
+                    <input 
+                    type = "date"
+                    value = { taskDate }
+                    onChange = { (e) => setTaskDate(e.target.value)}/>
                     { !isPending && <button>Save</button> }
                     { isPending && <button disabled>Saving..</button> }
                 </form>

@@ -10,6 +10,7 @@ const TaskItem = (props) => {
                         <div className="task-item">
                             <div className = "task-item-title">
                                 <h2>{ task.title }</h2>
+                                {task.taskDate && <p className="task-item-date">{ task.taskDate }</p>}
                             </div>
                             <div className = "task-item-status">
                                 { !task.completed && <div className="status-icon st-not-done"></div> }
