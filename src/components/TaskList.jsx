@@ -22,8 +22,8 @@ const TaskList = (props) => {
             <div className="task-list">
                 <div className="sort-button">
                     Sort by: <select value={sortType} onChange={handleSort}>
-                    <option value="sortAdded">Added order</option>
-                    <option value="sortCompleted">Completion</option>
+                    <option value="sortAdded">Added</option>
+                    <option value="sortCompleted">Incomplete</option>
                     </select>
                 </div>
                 <div className = "task-items">
