@@ -4,7 +4,7 @@ import TaskDetails from "./TaskDetails";
 
 const TaskManage = () => {
     const { id } = useParams();
-    const taskUrl = process.env.REACT_APP_JSON_URL+'/tasks/'+id;
+    const taskUrl = process.env.REACT_APP_JSON_URL+'/'+id;
     const { data: task, dbLoaded, error } = useFetch(taskUrl);
     const navigate = useNavigate();
 

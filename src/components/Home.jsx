@@ -2,7 +2,7 @@ import TaskList from "./TaskList";
 import useFetch from "../hooks/useFetch";
 
 const Home = () => {
-    const { data: tasks, dbLoaded, error } = useFetch(process.env.REACT_APP_JSON_URL+'/tasks');
+    const { data: tasks, dbLoaded, error } = useFetch(process.env.REACT_APP_JSON_URL);
 
     return(
         <div className = "home">
