@@ -6,8 +6,6 @@ const TaskList = (props) => {
     const [newTasks,setNewTasks] = useState(tasks);
     const [sortType, setSortType] = useState("sortAdded");
 
-    console.log(sortType);
-
     useEffect(() => {
         let sortedTasks = [...tasks]
         if (sortType === "sortAdded") sortedTasks.sort((a,b) => a.id - b.id);
