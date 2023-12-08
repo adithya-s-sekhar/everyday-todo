@@ -6,21 +6,8 @@ const TaskDetails = () => {
     const { data: task, dbLoaded, error } = useFetch(process.env.REACT_APP_JSON_URL+'/tasks/'+id);
     const navigate = useNavigate();
 
-    const doneTask = () => {
-        const newTask = { ...task, completed: true };
-        fetch(process.env.REACT_APP_JSON_URL+'/tasks/'+task.id,{
-            method: 'DELETE'
-        }).then(() => {
-            fetch(process.env.REACT_APP_JSON_URL+'/tasks',{
-                method: 'POST',
-                headers: { 'Content-Type':'application/json' },
-                body: JSON.stringify(newTask)
-            })
-        })
-    }
-
-    const notDoneTask = () => {
-        const newTask = { ...task, completed: false };
+    const changeTask = (taskStatus) => {
+        const newTask = { ...task, completed: taskStatus };
         fetch(process.env.REACT_APP_JSON_URL+'/tasks/'+task.id,{
             method: 'DELETE'
         }).then(() => {
@@ -55,8 +42,8 @@ const TaskDetails = () => {
                     <p>{task.details}</p>
             </div> }
             { task && <div className = "task-buttons">
-                            { !task.completed && <button className = "task-button-done" onClick = { doneTask }>Mark as done</button> }
-                            { task.completed && <button className = "task-button-not-done" onClick = { notDoneTask }>Reset task</button> }
+                            { !task.completed && <button className = "task-button-done" onClick = { () => {changeTask(true)} }>Mark as done</button> }
+                            { task.completed && <button className = "task-button-not-done" onClick = { () => {changeTask(false)} }>Reset task</button> }
                             <button className = "task-button-delete" onClick = { deleteTask }>Delete</button>
             </div>}
         </div>
