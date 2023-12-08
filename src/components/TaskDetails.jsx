@@ -3,15 +3,16 @@ import useFetch from "../hooks/useFetch";
 
 const TaskDetails = () => {
     const { id } = useParams();
-    const { data: task, dbLoaded, error } = useFetch(process.env.REACT_APP_JSON_URL+'/tasks/'+id);
+    const taskUrl = process.env.REACT_APP_JSON_URL+'/tasks/'+id;
+    const { data: task, dbLoaded, error } = useFetch(taskUrl);
     const navigate = useNavigate();
 
     const changeTask = (taskStatus) => {
         const newTask = { ...task, completed: taskStatus };
-        fetch(process.env.REACT_APP_JSON_URL+'/tasks/'+task.id,{
+        fetch(taskUrl,{
             method: 'DELETE'
         }).then(() => {
-            fetch(process.env.REACT_APP_JSON_URL+'/tasks',{
+            fetch(taskUrl,{
                 method: 'POST',
                 headers: { 'Content-Type':'application/json' },
                 body: JSON.stringify(newTask)
@@ -20,7 +21,7 @@ const TaskDetails = () => {
     }
 
     const deleteTask = () => {
-        fetch(process.env.REACT_APP_JSON_URL+'/tasks/'+task.id,{
+        fetch(taskUrl,{
             method: 'DELETE'
         }).then(() => {
             navigate('/');
