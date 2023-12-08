@@ -10,11 +10,11 @@ const TaskDetails = (props) => {
         fetch(taskUrl,{
             method: 'DELETE'
         }).then(() => {
-            fetch(taskUrl,{
+            fetch(process.env.REACT_APP_JSON_URL,{
                 method: 'POST',
                 headers: { 'Content-Type':'application/json' },
                 body: JSON.stringify(newTask)
-            })
+            });
         })
     }
 
