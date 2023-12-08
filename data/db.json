@@ -4,7 +4,7 @@
       "title": "Task 1",
       "details": "Task 1 Details",
       "taskDate": "2023-12-01",
-      "completed": false,
+      "completed": true,
       "id": 1
     },
     {

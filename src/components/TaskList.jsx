@@ -3,14 +3,14 @@ import TaskItem from "./TaskItem";
 
 const TaskList = (props) => {
     const tasks = props.tasks;
-    const [newTasks,setNewTasks] = useState(tasks);
+    const [sortedTasks,setSortedTasks] = useState(tasks);
     const [sortType, setSortType] = useState("sortAdded");
 
     useEffect(() => {
-        let sortedTasks = [...tasks]
-        if (sortType === "sortAdded") sortedTasks.sort((a,b) => a.id - b.id);
-        if (sortType === "sortCompleted") sortedTasks.sort((a,b) => a.completed - b.completed);
-        setNewTasks(sortedTasks);
+        let newTasks = [...tasks]
+        if (sortType === "sortAdded") newTasks.sort((a,b) => a.id - b.id);
+        if (sortType === "sortCompleted") newTasks.sort((a,b) => a.completed - b.completed);
+        setSortedTasks(newTasks);
     },[sortType])
 
     const handleSort = (e) => {
@@ -27,8 +27,8 @@ const TaskList = (props) => {
                     </select>
                 </div>
                 <div className = "task-items">
-                    {newTasks.map((newTasks) => (
-                        <TaskItem task = { newTasks } key = {newTasks.id}/>
+                    {sortedTasks.map((sortedTask) => (
+                        <TaskItem task = { sortedTask } key = {sortedTask.id}/>
                     ))}
                 </div>
             </div>
