@@ -4,7 +4,7 @@ const TaskItem = (props) => {
     const task = props.task;
 
     return(
-        <Link key = { task.id } to = {`/tasks/${ task.id }`}>    
+        <Link to = {`/tasks/${ task.id }`}>    
             <div className="task-item">
                 <div className = "task-item-title">
                     <h2>{ task.title }</h2>

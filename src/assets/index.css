@@ -86,7 +86,7 @@ button:active,.add-button:active{
 
 /* TaskList.jsx */
 
-.task-list{
+.task-items{
   margin-top: 30px;
   display: flex;
   gap: 40px;
@@ -96,7 +96,7 @@ button:active,.add-button:active{
   text-overflow: ellipsis;
 }
 
-.task-list a{
+.task-items a{
   color: #333;
 }
 
