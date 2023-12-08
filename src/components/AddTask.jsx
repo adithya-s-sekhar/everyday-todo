@@ -23,18 +23,15 @@ const AddTask = () => {
         setIsPending(true);
         const task = { title, details, taskDate, completed };
 
-        setTimeout( () => {
-            fetch(process.env.REACT_APP_JSON_URL,{
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(task)
-            })
-            .then(() => {
-                setIsPending(false);
-                navigate("/");
-            })
-            }, 500
-        )
+        fetch(process.env.REACT_APP_JSON_URL,{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(task)
+        })
+        .then(() => {
+            setIsPending(false);
+            navigate("/");
+        })
     }
 
     return(
