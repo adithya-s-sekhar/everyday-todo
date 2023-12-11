@@ -16,7 +16,7 @@ const TaskDetails = (props) => {
             body: JSON.stringify(newTask)})
         }).then(() => {
             navigate('/');
-        })
+        });
     }
 
     const deleteTask = () => {
@@ -24,7 +24,7 @@ const TaskDetails = (props) => {
             method: 'DELETE'
         }).then(() => {
             navigate('/');
-        })
+        });
     }
 
     return(
@@ -45,7 +45,7 @@ const TaskDetails = (props) => {
                 <button className = "task-button-delete" onClick = { deleteTask }>Delete</button>
             </div>
         </div>
-    )
+    );
 }
 
 export default TaskDetails;

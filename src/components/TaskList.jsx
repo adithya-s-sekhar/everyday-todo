@@ -11,7 +11,7 @@ const TaskList = (props) => {
         if (sortType === "sortAdded") newTasks.sort((a,b) => a.id - b.id);
         if (sortType === "sortCompleted") newTasks.sort((a,b) => a.completed - b.completed);
         setSortedTasks(newTasks);
-    },[sortType])
+    },[sortType]);
 
     const handleSort = (e) => {
         e.preventDefault();
@@ -35,4 +35,4 @@ const TaskList = (props) => {
     );
 }
 
-export default TaskList
+export default TaskList;

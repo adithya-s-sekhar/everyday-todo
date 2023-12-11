@@ -31,7 +31,7 @@ const AddTask = () => {
         .then(() => {
             setIsPending(false);
             navigate("/");
-        })
+        });
     }
 
     return(
@@ -62,4 +62,4 @@ const AddTask = () => {
     );
 }
 
-export default AddTask
+export default AddTask;

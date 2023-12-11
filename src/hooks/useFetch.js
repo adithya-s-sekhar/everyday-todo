@@ -21,10 +21,10 @@ const useFetch = (url) => {
             .catch(err => {
                 setError(err.message);
                 setDbLoaded(true);
-            })
+            });
     },[url]);
 
-    return {data, dbLoaded, error}
+    return {data, dbLoaded, error};
 }
 
-export default useFetch
+export default useFetch;
