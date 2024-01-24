@@ -3,6 +3,16 @@ import { Link } from "react-router-dom";
 const TaskItem = (props) => {
     const task = props.task;
 
+    function truncate(input, length){
+        if (input.length > length){
+            return (input.slice(0,length)+'...')
+        } else {
+            return input;
+        }
+    }
+
+    const details = truncate(task.details, 400);
+
     return(
         <Link to = {`/tasks/${ task.id }`}>    
             <div className="task-item">
@@ -16,7 +26,7 @@ const TaskItem = (props) => {
                 </div>
                 <div className = "task-item-details">
                     <h3>Details</h3>
-                    <p>{ task.details }</p>
+                    <p>{ details }</p>
                 </div>
             </div>
         </Link>
